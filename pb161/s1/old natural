@@ -1,0 +1,233 @@
+#include <cassert>
+#include <vector>
+#include <compare>
+
+/* Vaším úkolem je tentokrát naprogramovat strukturu, která bude
+ * reprezentovat libovolně velké přirozené číslo (včetně nuly). Tyto
+ * hodnoty musí být možné:
+ *
+ *  • sčítat (operátorem ‹+›),
+ *  • odečítat (‹x - y› je ovšem definováno pouze za předpokladu ‹x ≥ y›),
+ *  • násobit (operátorem ‹*›),
+ *  • libovolně srovnávat (operátory ‹==›, ‹!=›, ‹<›, atd.),
+ *  • mocnit na kladný exponent typu ‹int› metodou ‹power›,
+ *  • sestrojit z libovolné nezáporné hodnoty typu ‹int›.
+ *
+ * Implicitně sestrojená hodnota typu ‹natural› reprezentuje nulu.
+ * Všechny operace krom násobení musí být nejvýše lineární vůči
+ * «počtu dvojkových cifer» většího z reprezentovaných čísel.
+ * Násobení může mít v nejhorším případě složitost přímo úměrnou
+ * součinu ⟦m⋅n⟧ (kde ⟦m⟧ a ⟦n⟧ jsou počty cifer operandů). */
+
+struct natural{
+    std::vector<bool> data;
+    int shift = 0;
+
+    natural()= default;
+    natural(int num) { set_vec(num); }
+
+    friend std::strong_ordering operator<=>(const natural &a, const natural &b){
+        if (a.size() != b.size()) return a.size() <=> b.size();
+        for(int i = a.size() -1; i >= 0; --i){
+            if (a.get(i) && ! b.get(i)) return std::strong_ordering::greater;
+            if (!a.get(i) && b.get(i)) return std::strong_ordering::less; 
+        }
+        return std::strong_ordering::equivalent;
+    }
+
+    friend bool operator==(const natural &a, const natural &b) = default;
+
+
+    void set_vec(int n){
+        for (; n > 0; n >>= 1){
+            if ((n % 2) == 1)
+                data.push_back(true);
+            else
+                data.push_back(false);
+        }
+    }
+
+    bool get(int i)const{
+        if ((i - shift) < 0 || (i - shift) >= size()) return false;
+        return data[i - shift];
+    }
+
+    void set(int i, bool b){
+        data[i] = b;
+    }
+
+    int size()const{
+        if (data.empty())
+            return 0;
+        return static_cast<int>(data.size()) + shift;
+    }
+
+    // std::vector<bool> reverse(std::vector<bool> r){
+    //     std::vector<bool> res;
+    //     for (;!r.empty(); r.pop_back()) res.push_back(r.back());
+    //     return res;
+    // }
+
+    natural &operator+=(const natural &x){
+
+        bool bigger = size() > x.size();
+
+        if (!bigger)
+            data.resize(x.size());
+
+        int end = bigger ? size() : x.size();
+
+        bool carry = false;
+        bool a, b;
+        int i = 0;
+        for (; i < end; ++ i){
+            a = get(i);
+            b = x.get(i);
+
+            set(i, (a ^ b) ^ carry);
+            carry = (a && b) || ((a ^ b) && carry);
+        }
+        if (carry)
+            data.push_back(true);
+        return *this;
+    }
+
+    natural &operator-=(const natural &x){
+        bool carry = false;
+        bool a, b;
+        int last_i = -1;
+        int end = size() > x.size() ? size() : x.size();
+
+        for (int i = 0; i < end; ++ i){
+            a = get(i);
+            b = x.get(i);
+
+            set(i, (b ^ a) ^ carry);
+            if (get(i)) last_i = i;
+            carry = (!a && (b || carry)) || (a && b && carry);
+        }
+        if (last_i >= 0)
+            data.resize(last_i+1);
+        else
+            data = {};
+        return *this;
+    }
+
+    natural &operator*=(const natural a){
+        if (a.size() == 0){
+            data = {};
+            return *this;
+        }
+        natural tmp = *this;
+        data.clear();
+        for (; tmp.shift < a.size(); ++tmp.shift){
+            if (!a.get(tmp.shift))
+                continue;
+            *this += tmp;
+        }
+        return *this;
+    }
+
+    // natural &operator/=(const natural&a){
+
+    //     if (*this < a) return *new natural();
+
+    //     std::vector<bool> res;
+    //     natural tmp = a;
+    //     tmp.shift = size() - a.size();
+    //     for (;tmp.shift >= 0; --tmp.shift){
+    //         if (tmp < *this)
+    //             res.push_back(true);
+    //         else 
+    //             res.push_back(false);
+    //         *this -= tmp;
+    //     }
+    //     //need to reverse
+    //     data = reverse(res);
+    //     return *this;
+    // }
+
+    friend natural operator+(natural a, const natural &b){
+        a += b;
+        return a;
+    }
+
+    friend natural operator-(natural a/* a is bigger/equal */, const natural &b){
+        a -= b;
+        return a;
+    }
+
+    friend natural operator*(natural a, const natural &b){
+        a *= b;
+        return a;
+    }
+
+    // friend natural operator/(natural a, const natural &b){
+    //     a /= b;
+    //     return a;
+    // }
+
+    natural power(int i){
+        if (i == 0){
+            data = {true};
+            return *this;
+        }
+        --i;
+        natural fst = *this;
+        while (i > 0){
+            int m = 1;
+            natural cur = *this;
+            while(m * 2 < i){ cur *= cur; m *= 2; }
+            fst *= cur;
+            i -= m;
+        }
+        return fst;
+    }
+
+};
+
+int main()
+{
+    natural zero;
+    assert( zero + zero == zero );
+    assert( zero * zero == zero );
+    assert( zero - zero == zero );
+    natural one( 1 );
+    assert( one + zero == one );
+    assert( one.power( 2 ) == one );
+    natural x2(2);
+    natural x7(7);
+    natural x14(14);
+    natural x9(9);
+    natural x5(5);
+    natural x3(3);
+    natural x35(35);
+    natural x45(45);
+    natural x28(28);
+    natural x10(10);
+    natural x20(20);
+    natural x27(27);
+    assert(x7 * one == x7);
+    assert(x7 * x2 == x14);
+    assert(x14 - x7 == x7);
+    assert(x7 * x5 == x35);
+    assert(x14 * x2 == x28);
+    assert(x20 - x10 == x10);
+    assert(x3.power(2) == x9);
+    assert(x3.power(3) == x27);
+    assert(x7 + x7 == x14);
+    assert(x7 + x7 + x7 + x7 == x28);
+    assert(x28 - x14 == x14);
+    assert(x10 + x10 == x20);
+    assert(x45 - x35 == x10);
+    assert(x27 - x20 == x7);
+
+        for(int i = 0 ; i <= 700; i += 1 ){
+        for(int j = 0; j <= 50 ; j += 1){
+            assert(natural{i} * natural{j} == natural{i * j});
+            assert(natural{i}.power(5) == natural{i} * natural{i} * natural{i} * natural{i} * natural{i});
+        }
+    }
+
+    return 0;
+}

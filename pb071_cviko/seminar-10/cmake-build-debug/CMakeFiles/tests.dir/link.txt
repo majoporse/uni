@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99 -ggdb3 -Wall -Wextra -pedantic -g  -rdynamic CMakeFiles/tests.dir/tests.c.o  -o tests  libqueue.a 

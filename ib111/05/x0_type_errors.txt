@@ -1,0 +1,108 @@
+## T. Časté typové chyby
+
+V této části najdete popis některých častých typových chyb. Budeme
+ji postupně doplňovat, pokud vám nějaká typová chyba není jasná,
+můžete se zeptat v diskusním fóru. Nevkládejte tam však skutečný kód
+ze svých řešení domácích úkolů. Pokuste se problém s anotacemi
+izolovat do nějaké malé ukázky.
+
+### Cykly, seznamy a indexace
+
+Uvažme následující kód:
+
+    from typing import List  # python
+    
+    def longer_then_average_indices(data: List[str]) -> List[int]:
+        tot_length = 0
+        for i in data:
+            tot_length += len(i)
+    
+        avg = tot_length / len(data)
+        out = []
+        for i in range(len(data)):
+            if len(data[i]) > avg:
+                out.append(i)
+        return out
+
+Pro tento kód dostaneme následující výstup z mypy:
+
+    longer.py:11: error: Incompatible types in assignment (expression has type "int", variable has type "str")
+    longer.py:12: error: No overload variant of "__getitem__" of "list" matches argument type "str"
+    longer.py:12: note: Possible overload variants:
+    longer.py:12: note:     def __getitem__(self, int) -> str
+    longer.py:12: note:     def __getitem__(self, slice) -> List[str]
+    longer.py:14: error: Incompatible return value type (got "List[str]", expected "List[int]")
+    Found 3 errors in 1 file (checked 1 source file)
+
+Obecně platí, že chyby je vhodné opravovat od začátku, protože další
+chyby mohou být způsobeny těmi předchozími a samy o sobě tak nemusí
+vždy dávat dobrý smysl.
+
+1.  První chyba se nachází na řádku s druhým ‹for› cyklem. Snažíme se
+    tu přiřadit do proměnné typu ‹str› výraz typu ‹int›. V tomto
+    případě se jedná o přiřazení do řídící proměnné cyklu a problém
+    je způsoben tím, že jsme použili jméno proměnné, kterou jsme
+    použili již v prvním cyklu, ale v tomto případě se ji snažíme
+    použít pro iteraci přes položky jiného typu.
+    
+    ◦ Chyba je mimo jiné důsledkem toho, že řídící proměnné cyklů (a
+      obecně proměnné definované uvnitř cyklů) jsou v Pythonu
+      (na rozdíl od mnohých dalších jazyků) dostupné i po skončení
+      cyklu.
+    
+    ◦ Chyby se zbavíme typicky tak, že použijeme jinou proměnnou.
+
+2.  Druhá chyba, ta na následujícím řádku, nám říká, že proměnná,
+    kterou se snažíme indexovat je špatného typu.
+    
+    ◦ Tato chyba je v tomto případě důsledkem té první, ale může
+      samozřejmě nastat i samostatně. Mypy má již zapamatované, že ‹i›
+      je typu ‹str› a tedy předpokládá, že se pokoušíme indexovat
+      seznam řetězcem.
+    
+    ◦ Poněkud neintuitivní je, že se v chybě neobjevuje indexace
+      pomocí hranatých závorek, ale metoda ‹__getitem__›. To je dáno
+      tím, že touto metodou je vnitřně indexace implementována.
+    
+    ◦ Dva řádky „note“ říkají, že máme dvě možnosti, čím indexovat –
+      buď pomocí ‹int› nebo ‹slice›, což je typ představující zápis
+      slice seznamu.
+
+3.  Poslední chyba nám říká, že se snažíme vrátit hodnotu jiného
+    typu, než jaká byla očekávána (díky anotaci funkce).
+    
+    ◦ I tato chyba je v tomto případě následkem té první.
+
+### Operátor umocňování (‹**›)
+
+Operátor ‹**› je specifický v tom, že v závislosti na svých
+argumentech může vracet různé typy, což komplikuje jeho použití
+v otypovaném kódu. Uvažme následující funkci, která počítá nezápornou
+mocninu čísla 2.
+
+    def power2(num: int) -> int:  # python
+        assert num >= 0
+        return 2 ** num
+
+Pro tento kód dostaneme následující výstup z ‹mypy --strict›:
+
+    pow.py:2: error: Returning Any from function declared to return "int"
+    Found 1 error in 1 file (checked 1 source file)
+
+Problém je v tom, že výraz ‹2 ** num› pro celočíselné ‹num› vrací buď ‹int›
+(pokud je ‹num› ≥ 0) nebo ‹float› (pokud je ‹num› < 0). Řešením je explicitní
+typová konverze:
+
+• napsat ‹int(2 ** num)›, pokud jste si jisti, že funkce ‹power2› vždycky
+  dostane jen nezáporné parametry (jako v našem příkladě, kde je to vstupní
+  podmínka funkce);
+• napsat ‹float(2 ** num)›, pokud funkce ‹power2› může dostat i záporný
+  parametr; pak je ale třeba změnit typovou anotaci návratové hodnoty funkce
+  na ‹-> float›.
+
+Typ ‹Any› se pak v chybové hlášce objevuje proto, že operátor ‹**›
+je v Pythonu otypovaný tak, že vrací ‹Any›. Lze si představit i jiná
+možná řešení, ale autoři mypy (resp. autoři typeshed, což je
+projekt, který se zabývá typovými anotacemi pro standardní knihovny
+a vestavěné funkce a operátory Pythonu) se (z dobrých důvodů)
+rozhodli, že tomuto výrazu raději žádný typ nepřidělí.

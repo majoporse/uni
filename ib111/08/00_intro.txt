@@ -1,0 +1,31 @@
+# Algoritmy
+
+Demonstrační příklady:
+
+ 1. ‹countsort›  – řazení počítáním menších prvků
+ 2. ‹insertsort› – řazení zřetězeného seznamu
+ 3. ‹binsearch›  – hledání půlením intervalu
+
+Elementární příklady:
+
+ 1. ‹sorted›     – kontrola seřazenosti seznamu
+ 2. ‹selectsort› – řazení výběrem
+ 3. ‹uniqbound›  – dolní mez v seřazeném seznamu bez opakování
+
+Přípravy:
+
+ 1. ‹count›      – počítání frekvence hodnoty v seřazeném seznamu
+ 2. ‹extremes›   – lokální minima a maxima v seznamu hodnot
+ 3. ‹rotated›    – kontrola seřazenosti až na rotaci
+ 4. ‹frequency›  – řazení podle frekvence výskytu
+ 5. ‹merge› †    – sloučení seřazených zřetězených seznamů
+ 6. ‹unique› †   – hledání unikátních prvků v seřazeném seznamu
+
+Rozšířené úlohy:
+
+ 1. ‹bound›      – hledání v seřazeném seznamu
+ 2. ‹nested›     – řazení se zachováním struktury
+ 3. ‹flipped›    – seřazenost až na jedno prohození
+ 4. ‹greater› †  – permutace cifer
+ 5. ‹heapsort› † – řazení haldou
+ 6. ‹radix› †    – řazení po cifrách

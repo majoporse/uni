@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99 -ggdb3 -Wall -Wextra -pedantic -g  -rdynamic CMakeFiles/05-getline.dir/getline.c.o CMakeFiles/05-getline.dir/playground.c.o  -o 05-getline 

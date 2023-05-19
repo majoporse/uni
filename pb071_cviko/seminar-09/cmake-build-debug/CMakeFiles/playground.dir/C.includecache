@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/pb071_cviko/seminar-09/playground.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+stack.h
+/mnt/c/pb071_cviko/seminar-09/stack.h
+tree.h
+/mnt/c/pb071_cviko/seminar-09/tree.h
+limits.h
+/mnt/c/pb071_cviko/seminar-09/limits.h
+assert.h
+/mnt/c/pb071_cviko/seminar-09/assert.h
+
+/mnt/c/pb071_cviko/seminar-09/stack.h
+stdbool.h
+-
+
+/mnt/c/pb071_cviko/seminar-09/tree.h
+stdbool.h
+-
+stddef.h
+-
+stdio.h
+-
+

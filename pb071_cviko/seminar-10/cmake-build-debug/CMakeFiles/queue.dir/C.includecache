@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/pb071_cviko/seminar-10/perl.h
+time.h
+-
+
+/mnt/c/pb071_cviko/seminar-10/queue.c
+queue.h
+/mnt/c/pb071_cviko/seminar-10/queue.h
+assert.h
+-
+stdbool.h
+-
+stdint.h
+-
+stdlib.h
+-
+string.h
+-
+perl.h
+/mnt/c/pb071_cviko/seminar-10/perl.h
+
+/mnt/c/pb071_cviko/seminar-10/queue.h
+stdbool.h
+-
+stddef.h
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99 -ggdb3 -Wall -Wextra -pedantic -g  -rdynamic CMakeFiles/03-filesort.dir/filesort.c.o  -o 03-filesort  libreadline.a liblist.a 

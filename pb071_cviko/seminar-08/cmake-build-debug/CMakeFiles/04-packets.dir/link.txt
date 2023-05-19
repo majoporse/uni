@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99 -ggdb3 -Wall -Wextra -pedantic -g  -rdynamic CMakeFiles/04-packets.dir/packets.c.o  -o 04-packets 

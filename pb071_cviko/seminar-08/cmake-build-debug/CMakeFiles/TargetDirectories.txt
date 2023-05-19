@@ -1,0 +1,9 @@
+/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/CMakeFiles/04-packets.dir
+/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/CMakeFiles/03-filesort.dir
+/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/CMakeFiles/02-cipher.dir
+/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/CMakeFiles/05-getline.dir
+/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/CMakeFiles/01-censor.dir
+/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/CMakeFiles/list.dir
+/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/CMakeFiles/readline.dir

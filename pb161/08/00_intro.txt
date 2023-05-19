@@ -1,0 +1,20 @@
+# Lambda, pokročilé operátory
+
+Ukázky:
+
+ 1. ‹iterate› – funkce vyššího řádu,
+ 2. ‹convert› – nulovatelné reference.
+
+Elementární příklady:
+
+ 1. ‹iota›       – indexovací funkce,
+ 2. ‹accumulate› – součet výsledků.
+
+Přípravy:
+
+ 1. ‹kernel›     – rozklad podle jádra,
+ 2. ‹bitref›     – reference na jednotlivý bit,
+ 3. ‹combine›    – asociativní redukce kontejneru,
+ 4. ‹nibble›     – kontejner půlslabik,
+ 5. ‹higher›     – funkce vyššího řádu,
+ 6. ‹comp›       – vektor dvojic vs dvojice vektorů.

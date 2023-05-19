@@ -1,0 +1,145 @@
+## Přehled
+
+Tento předmět sestává z přednášek, cvičení, sad domácích úloh a
+závěrečné zkoušky. Protože se jedná o „programovací“ předmět,
+většina práce v předmětu – a tedy i jeho hodnocení – se bude
+zaměřovat na praktické programování. Je důležité, abyste
+programovali co možná nejvíce, ideálně každý den, ale minimálně
+několikrát každý týden. K tomu Vám budou sloužit příklady v této
+sbírce (typicky se bude jednat o velmi malé programy v rozsahu
+jednotek až desítek řádků, kterých byste měli být v průměru schopni
+vyřešit několik za hodinu) a domácí úlohy, kterých budou za semestr
+3 sady, a budou znatelně většího rozsahu (maximálně malé stovky
+řádků). V obou případech bude v průběhu semestru stoupat náročnost –
+je tedy důležité, abyste drželi krok a práci neodkládali na poslední
+chvíli.
+
+Protože programování je «těžké», bude i tento kurz těžký – je zcela
+nezbytné vložit do něj odpovídající úsilí. Doufáme, že kurz úspěšně
+absolvujete, a co je důležitější, že se v něm toho naučíte co
+nejvíce. Je ale nutno podotknout, že i přes svou náročnost je tento
+kurz jen malým krokem na dlouhé cestě.
+
+### Probíraná témata
+
+Předmět je rozdělen do 4 bloků (čtvrtý blok patří do zkouškového
+období). Do každého bloku v semestru patří 4 přednášky (témata) a
+jim odpovídající 4 cvičení. Pozor! Cvičení jsou vůči přednáškám
+posunuta o týden: první přednáška druhého bloku je tedy ve stejném
+týdnu jako poslední cvičení prvního bloku.
+
+│ bl. │     │ téma                                  │ přednáška │
+├─────│────▻┼◅──────────────────────────────────────│───────────│
+│  1  │  1. │ funkce, jednoduché hodnoty, reference │    14.2.  │
+│     │  2. │ složené hodnoty                       │    21.2.  │
+│     │  3. │ vlastní metody a operátory            │    28.2.  │
+│     │  4. │ životní cyklus hodnot, vlastnictví    │     7.3.  │
+│┄┄┄┄┄│┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄┄│
+│  2  │  5. │ ukazatele                             │    14.3.  │
+│     │  6. │ dědičnost, pozdní vazba               │    21.3.  │
+│     │  7. │ výjimky, princip RAII                 │    28.3.  │
+│     │  8. │ lexikální uzávěry, další operátory    │     4.4.  │
+│┄┄┄┄┄│┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄┄│
+│  3  │  9. │ součtové typy                         │    11.4.  │
+│     │ 10. │ knihovna algoritmů                    │    18.4.  │
+│     │ 11. │ řetězce                               │    25.4.  │
+│     │ 12. │ vstup a výstup                        │     2.5.  │
+│┄┄┄┄┄│┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄┄│
+│  –  │ 13. │ bonusy, opakování                     │     9.5.  │
+
+### Organizace sbírky
+
+V následujících sekcích naleznete detailnější informace a «závazná»
+pravidla kurzu: doporučujeme Vám, abyste se s nimi důkladně
+seznámili. Zbytek sbírky je pak rozdělen na části, které odpovídají
+jednotlivým týdnům semestru. «Důležité:» během prvního týdne
+semestru už budete řešit přípravy z první kapitoly, přestože první
+cvičení je ve až v týdnu druhém. Nulté cvičení je volitelné a není
+nijak hodnoceno.
+
+Kapitoly jsou číslovány podle přednášek, na které navazují: ve
+druhém týdnu semestru se tedy «ve cvičení» budeme zabývat tématy,
+která byla probrána v první přednášce (to je ta, která proběhla
+v prvním týdnu semestru), a ke kterým jste v prvním týdnu
+vypracovali a odevzdali přípravy.
+
+### Plán semestru
+
+Tento kurz vyžaduje značnou aktivitu během semestru. V této sekci
+naleznete přehled důležitých událostí formou kalendáře. Jednotlivé
+události jsou značeny takto (bližší informace ke každé naleznete
+v následujících odstavcích tohoto úvodu):
+
+ • „před X“ – přednáška ke kapitole č. X,
+ • „cvič 0“ – první den „nultých“ cvičení,
+ • „cvič 1“ – první den cvičení ke kapitole 1,
+ • „X/v“ – mezivýsledek verity testů příprav ke kapitole X,
+ • „X/p“ – poslední termín odevzdání příprav ke kapitole X,
+ • „sX/Y“ – Yté kolo verity testů k sadě X.
+
+Nejdůležitější události jsou zvýrazněny: termíny odevzdání příprav a
+poslední termín odevzdání úloh ze sad (obojí vždy o 23:59 uvedeného
+dne).
+
+│                               únor                              │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│   Po    │   Út    │   St   │   Čt   │   Pá    │   So   │   Ne   │
+├◅────────│◅────────│◅───────│◅───────│◅────────│◅───────│◅──────=│
+│ 13      │ 14      │ 15     │ 16     │ 17      │ 18     │ 19     │
+│ cvič 0  │ před 1  │        │ 01/v   │         │ «01/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 20      │ 21      │ 22     │ 23     │ 24      │ 25     │ 26     │
+│ cvič 1  │ před 2  │ s1/2   │ 02/v   │   s1/3  │ «02/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 27      │ 28      │        │        │         │        │        │
+│   s1/4  │ před 3  │        │        │         │        │        │
+
+│                              březen                             │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│   Po    │   Út    │   St   │   Čt   │   Pá    │   So   │   Ne   │
+├◅────────│◅────────│◅───────│◅───────│◅────────│◅───────│◅──────=│
+│         │         │ 1      │ 2      │ 3       │ 4      │ 5      │
+│         │         │ s1/5   │ 03/v   │   s1/6  │ «03/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 6       │ 7       │ 8      │ 9      │ 10      │ 11     │ 12     │
+│ s1/7    │ před 4  │   s1/8 │ 04/v   │ s1/9    │ «04/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 13      │ 14      │ 15     │ 16     │ 17      │ 18     │ 19     │
+│ s1/10   │ před 5  │  s1/11 │ 05/v   │ «s1/12» │ «05/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 20      │ 21      │ 22     │ 23     │ 24      │ 25     │ 26     │
+│ s2/1    │ před 6  │   s2/2 │ 06/v   │ s2/3    │ «06/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 27      │ 28      │ 29     │ 30     │ 31      │        │        │
+│ s2/4    │ před 7  │   s2/5 │ 07/v   │ s2/6    │        │        │
+
+
+│                              duben                              │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│   Po    │   Út    │   St   │   Čt   │   Pá    │   So   │   Ne   │
+├◅────────│◅────────│◅───────│◅───────│◅────────│◅───────│◅──────=│
+│         │         │        │        │         │ 1      │ 2      │
+│         │         │        │        │         │ «07/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 3       │ 4       │ 5      │ 6      │ 7       │ 8      │ 9      │
+│ s2/7    │ před 8  │ s2/8   │ 08/v   │ s2/9    │ «08/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 10      │ 11      │ 12     │ 13     │ 14      │ 15     │ 16     │
+│ s2/10   │ před 9  │ s2/11  │ 09/v   │ «s2/12» │ «09/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 17      │ 18      │ 19     │ 20     │ 21      │ 22     │ 23     │
+│ s3/1    │ před 10 │ s3/2   │ 10/v   │ s3/3    │ «10/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 24      │ 25      │ 26     │ 27     │ 28      │ 29     │ 30     │
+│ s3/4    │ před 11 │ s3/5   │ 11/v   │ s3/6    │ «11/p» │        │
+
+
+│                              květen                             │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│    Po   │   Út    │   St   │   Čt   │   Pá    │   So   │   Ne   │
+├◅────────│◅────────│◅───────│◅───────│◅────────│◅───────│◅──────=│
+│ 1       │ 2       │ 3      │ 4      │ 5       │ 6      │ 7      │
+│ s3/7    │ před 12 │ s3/8   │ 12/v   │ s3/9    │ «12/p» │        │
+│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄│
+│ 8       │ 9       │ 10     │ 11     │ 12      │ 13     │ 14     │
+│ s3/10   │ před 13 │ s3/11  │        │ «s3/12» │        │        │

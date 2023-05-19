@@ -1,0 +1,32 @@
+# Rekurze II, backtracking
+
+Demonstrační příklady:
+
+1. ‹cycle›        – hledání cyklu s rozhodováním
+2. ‹minmax›       – jak vyhrát tic-tac-toe
+3. ‹sat›          – splnitelnost formulí výrokové logiky
+4. ‹8puzzle› †    – puzzle s osmi kameny a devíti políčky
+
+Elementární příklady:
+
+1. ‹subsets›      – generování všech podmnožin
+2. ‹permutations› – výpočet všech permutací slova
+3. ‹flatten›      – rekurze na vnořených seznamech
+
+Přípravy:
+
+1. ‹squaresum›    – rozklad čísla na součet čtverců
+2. ‹rewrite›      – dosažitelnost v přepisovacím systému
+3. ‹chain›        – počítač hraje slovní fotbal
+4. ‹digits›       – generování čísel s daným ciferným součtem
+5. ‹template›     – tvorba řetězců podle šablony
+6. ‹circle›       – nejdelší kruhový slovní fotbal
+
+Rozšířené úlohy:
+
+1. ‹subseq›       – neklesající podposloupnosti
+2. ‹ipv4fix›      – oprava rozbité IPv4 adresy
+3. ‹weighted›     – hledání slov splňujících podmínku
+4. ‹nested› †     – řazení vnořeného seznamu bez změny struktury
+5. ‹subsetsum›    – známý NP-těžký problém
+6. ‹dnfsat›       – splnitelnost formulí v DNF

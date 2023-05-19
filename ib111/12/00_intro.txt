@@ -1,0 +1,29 @@
+# Opakování
+
+Toto je poslední kapitola hlavní části sbírky. Příklady této
+kapitoly slouží k procvičení učiva z celého semestru, neobjevují se
+zde již žádné nové koncepty ani konstrukce.
+
+Elementární příklady:
+
+1. ‹wormhole›    – práce s ciframi
+2. ‹wordwrap›    – zalomení dlouhých řádků
+3. ‹bounds›      – minimum a maximum ve stromě
+
+Přípravy:
+
+1. ‹lists›       – práce se seznamem seznamů
+2. ‹bowling›     – výpočet bodování kuželek
+3. ‹count›       – variace na ciferný součet
+4. ‹spreadsheet› – zpracování souboru s tabulkou čísel
+5. ‹wordmask›    – maskování písmen ve slově
+6. ‹composite›   – hledání vysoce složených čísel
+
+Rozšířené úlohy:
+
+1. ‹walk›        – procházka čtvercovou mřížkou
+2. ‹arraylist›   – zřetězený seznam polí
+3. ‹cycle› †     – nekonečné proudy
+4. ‹stream› †    – obecné proudy
+5. ‹disjoint›    – nejbližší číslo s úplně jinými ciframi
+6. ‹poly›        – zápis a čtení polynomu z řetězce

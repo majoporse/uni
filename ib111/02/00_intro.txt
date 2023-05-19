@@ -1,0 +1,104 @@
+# Číselné algoritmy
+
+Tento týden pokračujeme v programování s čísly (první setkání se
+složitějšími datovými typy nás čeká příští týden). Tentokrát si
+naprogramujeme řadu jednoduchých algoritmů, které si vystačí
+s konstrukcemi, které již známe: cykly ‹for› a ‹while›, podmíněnými
+příkazy ‹if›, proměnnými, a definicemi čistých funkcí. Významnější
+roli budou hrát i čísla s plovoucí desetinnou čárkou – typ ‹float›.
+
+To, co bude tento týden nové je, že algoritmy, které budeme
+programovat, budou mít složitější strukturu, budou používat více
+proměnných a budou se typicky více větvit. V tomto týdnu byste si
+tedy z cvičení měli odnést základní dovednosti algoritmizace a
+v tomto kontextu si procvičit použití a zápis konstrukcí, které
+znáte z prvních dvou přednášek.
+
+V neposlední řadě dojde tento týden i na základy dekompozice:
+některé algoritmy, které budeme programovat, bude vhodné rozložit na
+podprogramy. Podobně jako minulý týden, budeme tento týden pracovat
+pouze s čistými funkcemi: kdykoliv v příkladech pro tento týden
+zmíníme funkci, myslíme tím implicitně funkci čistou.
+
+Rádi bychom ještě zmínili, že i v případě, že již znáte datový typ
+řetězec (‹str›), není vhodné jej v této kapitole k ničemu používat.
+Řešení, která používají řetězce, «nemusí být přijata».
+
+Ukázky:
+
+ 1. ‹descending› – ⟦n⟧-tá cifra čísla
+ 2. ‹comb›       – kombinační čísla, ‹for› a ‹while›
+ 3. ‹triangle›   – řešení trojúhelníků (desetinná čísla)
+
+Elementární příklady:
+
+ 1. ‹palindrome› – je číslo palindrom?
+ 2. ‹gcd›        – největší společný dělitel (naivně)
+ 3. ‹digits›     – počet cifer v posloupnosti
+
+Přípravy:
+
+ 1. ‹digit_sum›  – variace na ciferný součet
+ 2. ‹joined›     – posloupnost čísel
+ 3. ‹fraction›   – převod na řetězcový zlomek
+ 4. ‹maximum›    – lokální maximum na intervalu
+ 5. ‹credit›     – ověření korektnosti čísla platební karty
+ 6. ‹workdays›   – počet pracovních dnů v roce
+
+Rozšířené úlohy:
+
+ 1. ‹savings›    – úročení a inflace
+ 2. ‹fridays›    – počet pátků 13. v zadaném roce
+ 3. ‹delete›     – umazávání cifer z čísla
+ 4. ‹cards›      – visa, mastercard
+ 5. ‹bisect› †   – aproximace kořenů
+ 6. ‹distinct› † – nejbližší číslo s jinými ciframi
+
+## A. Poziční číselné soustavy
+
+K zápisu čísel v západní civilizaci běžně používáme desítkovou
+soustavu. Desítková soustava je jednou z mnoha tzv. pozičních
+číselných soustav, při kterých se hodnota čísla odvíjí od toho, na
+jaké pozici stojí jaká číslice. Hodnotu čísla získáme tak, že pozice
+číslujeme od nuly zprava, hodnotu každé číslice násobíme základem
+umocněným na pozici a výsledky sečteme.
+
+V desítkové soustavě tedy nejpravější číslici násobíme ⟦10⁰ = 1⟧,
+druhou číslici zprava násobíme ⟦10¹ = 10⟧, třetí zprava ⟦10² = 100⟧
+atd.
+
+Můžeme ovšem za základ vzít i jiné číslo než je desítka. Třeba ve
+trojkové soustavě násobíme číslice zprava hodnotami 1, 3, 9, 27, …
+v sedmičkové soustavě násobíme číslice zprava hodnotami 1, 7, 49, 343.
+
+To, že daný zápis je myšlen v soustavě s jiným základem než ⟦10⟧,
+typicky v matematice značíme uzávorkováním a dolním indexem.
+Například ⟦(321)₇⟧ je zápis čísla 162, protože ⟦3 ⋅ 49 + 2 ⋅ 7 + 1 =
+162⟧.
+
+Důležité je si uvědomit, že čísla (jako abstraktní pojem pro počet)
+jsou úplně nezávislá na zvolené reprezentaci. Pokud bychom se
+vyvinuli jinak a neměli deset prstů, ale třeba jen osm, tak by nám
+desítková soustava připadala bizarní a osmičková jako zcela
+přirozená. (A mimochodem, v historii se taky používala soustava
+dvanáctková nebo šedesátková – zbytek té historie vidíme např. na
+současném systému pro měření času.)
+
+Hlavní myšlenkou zde je to, že ⟦(101)₂ = 5⟧, tedy jde o totéž číslo,
+jen jinak zapsané.
+
+V Pythonu máme standardně možnost používat tyto soustavy:
+
+ • desítkovou (používáme číslice ‹0›, ‹1›, ‹2›, ‹3›, ‹4›, ‹5›, ‹6›,
+   ‹7›, ‹8›, ‹9› a zápis čísel nezačíná žádným speciálním prefixem),
+ • dvojkou (používáme číslice ‹0›, ‹1› a zápis čísel začíná ‹0b›),
+ • osmičkovou (používáme číslice ‹0›, ‹1›, ‹2›, ‹3›, ‹4›, ‹5›, ‹6›,
+   ‹7› a zápis čísel začíná prefixem ‹0o›),
+ • šestnáctkovou (používáme číslice ‹0›, ‹1›, ‹2›, ‹3›, ‹4›, ‹5›,
+   ‹6›, ‹7›, ‹8›, ‹9›, ‹a›, ‹b›, ‹c›, ‹d›, ‹e›, ‹f› a zápis čísel
+   začíná prefixem ‹0x›).
+
+Tedy např. číslo ‹0o321› je číslo ⟦(321)₈ = 209⟧. Totéž číslo se
+taky dá v Pythonu zapsat jako ‹209› nebo ‹0xd1› nebo ‹0b11010001›,
+ale pořád je to stejné číslo, jak dokládá i skutečnost, že výraz
+‹0b11010001 == 209› se vyhodnotí na ‹True›.

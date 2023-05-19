@@ -1,0 +1,15 @@
+==4967== Memcheck, a memory error detector
+==4967== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4967== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==4967== Command: ./e_tree
+==4967== Parent PID: 4965
+==4967== 
+==4967== 
+==4967== HEAP SUMMARY:
+==4967==     in use at exit: 0 bytes in 0 blocks
+==4967==   total heap usage: 95 allocs, 95 frees, 75,822 bytes allocated
+==4967== 
+==4967== All heap blocks were freed -- no leaks are possible
+==4967== 
+==4967== For lists of detected and suppressed errors, rerun with: -s
+==4967== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

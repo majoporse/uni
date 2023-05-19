@@ -1,0 +1,69 @@
+# If, cykly, proměnné
+
+První kapitola sbírky slouží k procvičení látky z první přednášky –
+tento princip bude v platnosti celý semestr.
+
+Vždy do «sobotní půlnoci» (tento týden to je půlnoc z 18.9. na
+19.9.) musíte odevzdat řešení libovolných tří příkladů ze sekce
+příprav. Připomínáme, že v každém čtyřtýdenním bloku «musíte» pro
+úspěšné absolvování kurzu splnit minimálně 3 přípravy ze 4.
+Detailněji jsou pravidla popsána v části A.
+
+Tento týden se budeme zabývat zejména tzv. «tokem řízení» (anglicky
+«control flow») – téma, které jsme načali už v nultém týdnu. Jedná
+se zejména o konstrukci podmíněného vykonání kódu (příkaz ‹if›) a
+o konstrukce pro opakované spuštění sekvence příkazů (příkazy ‹for›,
+‹while›). V menší míře se budeme zabývat také «proměnnými» –
+pojmenovanými «hodnotami», vhodnými pro pozdější (případně
+vícenásobné) použití.
+
+V ukázkách si na příkladech vysvětlíme již zmiňované základní
+konstrukce (teorii již znáte z přednášky). Ukázky označené znakem †
+jsou náročnější – pravděpodobně se u nich budete muset více
+soustředit. Nepovede-li se Vám takovou ukázku rozluštit napoprvé,
+zkuste ji na pár dnů odložit, a vrátit se k ní později (poté, co se
+Vám látka pro daný týden více rozležela v hlavě a již jste si
+vyřešili pár příkladů).
+
+ 1. ‹triangle›    – návratové hodnoty podprogramů, funkce
+ 2. ‹sum›         – použití indexů v cyklech
+ 3. ‹fibonacci›   – přepis matematické posloupnosti do algoritmu
+ 4. ‹cycle›       – použití podmíněného příkazu
+ 5. ‹converge› †  – výběr podposloupnosti
+
+Dále máte k dispozici několik elementárních příkladů, na kterých si
+můžete nové konstrukce rychle procvičit:
+
+ 1. ‹divisors›    – zjištění počtu dělitelů čísla použitím cyklu
+ 2. ‹powers›      – součet po sobě jdoucích ⟦k⟧-tých mocnin
+ 3. ‹multiples›   – počítání násobků
+
+Dalším krokem jsou samozřejmě již zmiňované přípravy. Ty, které jste
+si vybrali k odevzdání, vypracujte «zcela samostatně», u těch
+zbývajících můžete pracovat způsobem, který Vám nejvíce vyhovuje:
+samostatně, probrat myšlenku se spolužáky, ale naprogramovat každý
+sám, dokonce si můžete vzájemně pomáhat i se samotným zápisem kódu.
+Ujistěte se ale, že v «žádném případě» neodevzdáváte příklad, se
+kterým Vám někdo pomáhal, a nepomáhejte spolužákům s příklady, které
+sami hodláte odevzdat!
+
+ 1. ‹sequence›    – ⟦n⟧-té číslo posloupnosti s parametry
+ 2. ‹nested›      – vnořené posloupnosti
+ 3. ‹triples›     – největší pythagorejská trojice
+ 4. ‹geometry›    – predikáty trojúhelníkových vlastností
+ 5. ‹fibsum›      – suma sudých členů Fibonacciho posloupnosti
+ 6. ‹next›        – výpočet následujícího většího násobku
+
+V poslední sekci jsou rozšířené příklady: některé z nich si vyřešíte
+příští týden na cvičení, ostatní můžete řešit se spolužáky nebo
+samostatně jako přípravu na zkoušku. K těmto příkladům naleznete
+v kapitole R vzorová řešení: silně Vám ale doporučujeme na řešení se
+nedívat, dokud příklad nemáte vyřešený, nebo jste se u něj vysloveně
+nezasekli.
+
+ 1. ‹even›        – součet sudých mocnin
+ 2. ‹prime›       – kontrola prvočíselnosti
+ 3. ‹coins›       – minimální počet mincí pro hodnotu
+ 4. ‹fibfibsum› † – použití posloupnosti k indexaci
+ 5. ‹abundant› †  – vlastnosti čísel a jejich dělitelů
+ 6. ‹amicable› †  – vlastnosti dvojic čísel

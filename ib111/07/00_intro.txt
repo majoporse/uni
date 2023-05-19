@@ -1,0 +1,31 @@
+# Paměť, složené typy
+
+Ukázky:
+
+ 1. ‹shapes›    – složené datové typy
+ 2. ‹hospital›  - jednoduché objekty
+ 3. ‹stack›     – zásobník jako zřetězený seznam
+
+Elementární příklady:
+
+ 1. ‹warriors›  – složené datové typy
+ 2. ‹sorted›    – variace na zřetězený seznam
+ 3. ‹maximum›   – hledání v zřetězeném seznamu
+
+Přípravy:
+
+ 1. ‹duration›  – datová struktura pro práci s časem
+ 2. ‹tortoise›  – želví grafika bez grafiky
+ 3. ‹filter›    – výběr ze zřetězeného seznamu dle kritéria
+ 4. ‹ring›      – kruhový buffer pevné velikosti
+ 5. ‹fifo›      – fronta jako zřetězený seznam
+ 6. ‹doubly› †  – obousměrně zřetězený seznam
+
+Rozšířené úlohy:
+
+ 1. ‹circular›  – seznam zřetězený do kruhu
+ 2. ‹shuffle›   – přeuspořádání zřetězeného seznamu
+ 3. ‹books›     – jednoduchá databáze knih
+ 4. ‹select›    – výběr ze zřetězeného seznamu dle indexů
+ 5. ‹zipper› †  – seznam s posuvným význačným prvkem
+ 6. ‹poly› †    – reprezentace polynomů

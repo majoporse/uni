@@ -1,0 +1,37 @@
+# Datové struktury
+
+V této kapitole se budeme opět zabývat zabudovanými datovými strukturami:
+z třetí kapitoly již známe «seznam» a «n-tici», tento týden přibudou
+«zásobník» (stack), «fronta» (queue), «slovník» (dictionary) a «množina»
+(set).
+
+Demonstrační příklady:
+
+ 1. ‹hills›       – použití zásobníku k sledování nadmořské výšky
+ 2. ‹digram›      – použití slovníku pro frekvenční analýzu
+ 3. ‹closure›     – práce s množinami čísel
+ 4. ‹factory› †   – výrobní fronta
+
+Elementární příklady:
+
+ 1. ‹symmetric›   – kontrola symetričnosti relace
+ 2. ‹brackets›    – kontrola uzávorkování s více druhy závorek
+ 3. ‹morse›       – překlad z/do Morseovy abecedy
+
+Přípravy:
+
+ 1. ‹rpn›         – vyhodnocení výrazů v postfixovém zápisu
+ 2. ‹b_happy›     – rozhodování iterativně zadané vlastnosti čísel
+ 3. ‹flood›       – vyplňování jednobarevné plochy v rastrovém obrázku
+ 4. ‹histogram›   – statistické zpracování jednorozměrného signálu
+ 5. ‹alchemy›     – výroba substancí podle sady pravidel
+ 6. ‹shortest› †  – procházení jednoduchého bludiště
+
+Rozšířené úlohy:
+
+ 1. ‹transitive›  – tranzitivní relace
+ 2. ‹fixpoint›    – hledání pevného bodu množinové funkce
+ 3. ‹breadth›     – nejdelší řádek stromu
+ 4. ‹variables›   – vyhodnocení výrazu zadaného slovníkem
+ 5. ‹connected› † – spojitost sítě MHD
+ 6. ‹lakes› †     – jezírka v krajině

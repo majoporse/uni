@@ -1,0 +1,114 @@
+# Seznamy a n-tice
+
+Tento týden se budeme poprvé zabývat složenými datovými typy,
+konkrétně těmi, které reprezentují sekvence: seznamy a uspořádanými
+n-ticemi. Prozatím jsme se setkali pouze s hodnotami tzv.
+«skalárních typů»: zejména ‹int›, ‹float›, ‹bool›. Použití těchto
+datových typů nám umožňovalo pamatovat si «fixní množství» dat:
+například při výpočtu ⟦n⟧-tého prvku Fibonacciho posloupnosti jsme
+si potřebovali pamatovat tři čísla, které jsme měli uložené ve třech
+proměnných. To, co nám ale hodnoty tohoto charakteru neumožňovaly,
+bylo například zapamatovat si všechny dosud spočtené prvky. Zkuste
+se zamyslet, co by se stalo, kdybychom chtěli vyčíslit ⟦n⟧-tý prvek
+posloupnosti zadané třeba takto (v OEIS nalezne pod číslem A165552):
+
+⟦ a₁ = 1
+  aₙ = ∑ₖ₌₁ⁿ⁻¹ d(k,n)⋅aₖ ⟧
+
+kde ⟦d(k,n) = k⟧ když ⟦k⟧ dělí ⟦n⟧ a 0 jinak. Tady už nestačí
+pamatovat si poslední dva prvky – co je horší, nestačí nám «žádný»
+konstantní počet proměnných: potřebujeme jich tolik, kolikátý prvek
+chceme spočítat.
+
+To je přesně situace, kdy lze použít «sekvenční datový typ»: hodnota
+sekvenčního typu se skládá z libovolného počtu jiných hodnot,
+očíslovaných po sobě jdoucími celými čísly. Číslu, které popisuje
+pozici „vnitřní“ hodnoty, říkáme «index», a podobně jak tomu bylo
+s indexovými proměnnými, první prvek má číslo (index) 0.
+
+V Pythonu existují dva základní sekvenční typy: první je
+«uspořádaná n-tice» (anglicky «tuple», případně «n-tuple»), ten
+druhý pak «seznam» (anglicky «list»). Hodnoty obou těchto typů mají
+«vnitřní strukturu» – vzpomeňte si, že proměnné «váží» hodnoty ke
+jménům: sekvence obdobně «váže» hodnoty k «indexům» (celým číslům).
+Seznam a n-tice se tedy chovají podobně, jako bychom měli proměnné
+pojmenované ‹lst[0]›, ‹lst[1]›, ‹lst[2]›, atd. K těmto «pomyslným
+proměnným» můžeme navíc přistupovat «nepřímo»: jako index můžeme
+použít nejen konstantu, ale libovolné jiné číslo v programu – klidně
+třeba hodnotu proměnné, nebo i výraz, např.  ‹lst[i]› nebo ‹lst[i +
+1]›.
+
+  ┌───┐ ┌───┐ ┌─────┐
+  │‹x›│ │‹y›│ │‹lst›│                          proměnné
+  └───┘ └───┘ └─────┘
+    │     │      ▼
+    │     │    ┌───┬───┬───┬───┬───┐
+    │     │    │ 0 │ 1 │ 2 │ 3 │ 4 │           indexy
+    │     │    └───┴───┴───┴───┴───┘
+    │     │      │   │   │   │   ╰───────╮
+    │     │      │   │   │   ╰─────╮     │     odkazy
+    │     │      │   ╰─╮ ╰───╮     │     │
+    ▼     ▼      ▼     ▼     ▼     ▼     ▼
+  ┌───┐ ┌───┐  ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐
+  │ 4 │ │ 5 │  │ 1 │ │ 1 │ │ 2 │ │ 3 │ │ 5 │   hodnoty
+  └───┘ └───┘  └───┘ └───┘ └───┘ └───┘ └───┘
+
+Obdoba «použití» proměnné (např. ve výrazu ‹x + 1›, který se
+vyhodnotí na ‹5›) je «indexace» seznamu, např. ‹lst[0]› se
+vyhodnotí na ‹1›, ‹lst[2] + 1› se vyhodnotí na ‹3›, atp. Výraz
+‹lst[x]› se vyhodnotí na ‹5›.
+
+Máme-li hodnotu typu seznam, můžeme navíc «měnit» na «kterou» hodnotu
+ten-který index odkazuje, a tato «změna odkazu» je zcela analogická
+«přiřazení do proměnné». Toto «vnitřní přiřazení» zapisujeme
+podobně jako to běžné, např. ‹lst[3] = 9›, a má obdobný efekt (na
+obrázku je již pouze hodnota typu seznam z proměnné ‹lst›):
+
+  ┌───┬───┬───┬───┬───┐
+  │ 0 │ 1 │ 2 │░3 │ 4 │                indexy
+  └───┴───┴───┴───┴───┘
+    │   │   │   │   ╰─────────────╮
+    │   │   │   ╰───────────╮     │    odkazy
+    │   ╰─╮ ╰───╮           │     │
+    ▼     ▼     ▼           ▼     ▼
+  ┌───┐ ┌───┐ ┌───┐ ┌┄┄┄┐ ┌───┐ ┌───┐
+  │ 1 │ │ 1 │ │ 2 │ ┆ 3 ┆ │ 9 │ │ 5 │  hodnoty
+  └───┘ └───┘ └───┘ └┄┄┄┘ └───┘ └───┘
+
+Uspořádaná n-tice se pak od seznamu liší zejména tím, že «nemá
+vnitřní přiřazení»: přiřazení hodnot indexům je tedy pevně dané při
+vytvoření n-tice a nelze jej již dále v programu měnit. Zároveň do
+n-tice nelze po jejím vzniku přidávat nové indexy (těm by totiž bylo
+potřeba přiřadit hodnoty, a to v n-tici nelze).
+
+Použití seznamů a n-tic si dále demonstrujeme na několika ukázkách:
+
+ 1. ‹statistics›  – iterace a indexace seznamů
+ 2. ‹fibonacci›   – konstrukce nového seznamu
+ 3. ‹sequence›    – výpočet výše uvedené posloupnosti
+ 4. ‹points›      – práce s n-ticemi a seznamy n-tic
+ 5. ‹rotate›      – mutace (vnitřní přiřazení) na seznamech
+
+Elementární příklady:
+
+ 1. ‹predicates›  – predikáty na seznamech
+ 2. ‹explosion›   – filtrování seznamu podle kritéria
+ 3. ‹cartesian›   – výpočet kartézského součinu
+
+Přípravy:
+
+ 1. ‹numbers›     – převod číselných soustav
+ 2. ‹fraction›    – vyhodnocení řetězového zlomku
+ 3. ‹histogram›   – četnost hodnot ve vstupním seznamu
+ 4. ‹length›      – délka lomené čáry
+ 5. ‹merge›       – sloučení dvou uspořádaných seznamů
+ 6. ‹cellular›    – jednoduché buněčné automaty
+
+Rozšířené úlohy:
+
+ 1. ‹quiz›        – vyhodnocení multiple-choice testu
+ 2. ‹rectangles›  – překryv obdélníků v zadaném seznamu
+ 3. ‹concat›      – spojování vnořených seznamů
+ 4. ‹rcellular›   – buněčný automat in situ
+ 5. ‹squares›     – metoda nejmenších čtverců
+ 6. ‹partition› † – přerozdělení seznamu podle velikosti

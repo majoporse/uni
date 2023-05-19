@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99 -ggdb3 -Wall -Wextra -pedantic -g  -rdynamic CMakeFiles/01-censor.dir/censor.c.o  -o 01-censor  libreadline.a 

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="seminar08"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\data\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="04-packets">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/04-packets" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 04-packets"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="04-packets/fast">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/04-packets" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 04-packets/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="03-filesort">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/03-filesort" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 03-filesort"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="03-filesort/fast">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/03-filesort" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 03-filesort/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="02-cipher">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/02-cipher" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 02-cipher"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="02-cipher/fast">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/02-cipher" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 02-cipher/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="05-getline">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/05-getline" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 05-getline"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="05-getline/fast">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/05-getline" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 05-getline/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="01-censor">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/01-censor" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 01-censor"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="01-censor/fast">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/01-censor" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 01-censor/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/liblist.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 list"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list/fast">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/liblist.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 list/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="readline">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/libreadline.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 readline"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="readline/fast">
+				<Option output="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/libreadline.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/pb071_cviko/seminar-08/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 readline/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/pb071_cviko/seminar-08/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/censor.c">
+			<Option target="01-censor"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/cipher.c">
+			<Option target="02-cipher"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/filesort.c">
+			<Option target="03-filesort"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/getline.c">
+			<Option target="05-getline"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/getline.h">
+			<Option target="05-getline"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/list.c">
+			<Option target="list"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/list.h">
+			<Option target="list"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/list_utils.c">
+			<Option target="list"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/list_utils.h">
+			<Option target="list"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/packets.c">
+			<Option target="04-packets"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/playground.c">
+			<Option target="05-getline"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/readline.c">
+			<Option target="readline"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/readline.h">
+			<Option target="readline"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/data/aperture.key">
+			<Option virtualFolder="CMake Files\data\"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/data/aperture.xor">
+			<Option virtualFolder="CMake Files\data\"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/data/c-original.txt">
+			<Option virtualFolder="CMake Files\data\"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/data/glados.bin">
+			<Option virtualFolder="CMake Files\data\"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/data/glados.txt">
+			<Option virtualFolder="CMake Files\data\"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/data/gone-original.txt">
+			<Option virtualFolder="CMake Files\data\"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/data/gone.txt">
+			<Option virtualFolder="CMake Files\data\"/>
+		</Unit>
+		<Unit filename="/mnt/c/pb071_cviko/seminar-08/data/result.txt">
+			<Option virtualFolder="CMake Files\data\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

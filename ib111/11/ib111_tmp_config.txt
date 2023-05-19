@@ -1,0 +1,9 @@
+[chapters]
+1 = "conditions"
+2 = "loops"
+3 = "recursion"
+[main]
+code = "IB111"
+cred = "6"
+name = ""
+term = "spring term"

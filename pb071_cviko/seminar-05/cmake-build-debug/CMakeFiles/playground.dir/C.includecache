@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/pb071_cviko/seminar-05/string_library.c
+string_library.h
+/mnt/c/pb071_cviko/seminar-05/string_library.h
+signal.h
+-
+stdio.h
+-
+
+/mnt/c/pb071_cviko/seminar-05/string_library.h
+stdlib.h
+-
+stddef.h
+-
+

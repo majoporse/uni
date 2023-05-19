@@ -1,0 +1,56 @@
+# Řetězce
+
+Tento týden se budeme zabývat řetězci – jedná se o datový typ, který
+se podobá seznamu (a na rozdíl od n-tic se i podobně používá), a
+kterého smyslem je reprezentovat v počítači «text». Rozdíly oproti
+obecnému seznamu jsou dva: řetězec obsahuje vždy znaky (a nikdy
+hodnoty jiných typů) a řetězec nemá vnitřní přiřazení, a tedy jednou
+postavený řetězec již nelze měnit. První z těchto vlastností je
+univerzální, druhá je spíše specialita Pythonu.
+
+Podobně jako seznamy lze řetězce «indexovat» a «iterovat». Druhou
+specialitou Pythonu je, že neexistuje samostatný typ pro znak, tento
+je reprezentován jednopísmenným řetězcem. To vede k zvláštní
+definici indexace (a iterace), kdy výsledkem indexace řetězce je
+opět řetězec (tento výsledný řetězec je vždy jednopísmenný).
+
+Krom operací, které plynou z toho, že se jedná o sekvenční typ,
+řetězce navíc poskytují řadu operací, které jsou specifické pro
+sekvence «znaků»: převod na malá/velká písmena, rozčlenění podle
+oddělovače, sloučení seznamu řetězců do jednoho pomocí oddělovače
+atd.
+
+Krom řetězců, které tvoří hlavní náplň tohoto týdne, budeme tento
+týden pokračovat i v práci se seznamy, zejména seznamy seznamů které
+tvoří dvourozměrné datové struktury (tabulky, matice, atp.).
+
+Základní operace na řetězcích a práci s jednoduchým dvourozměrným
+seznamem si předvedeme v několika ukázkách:
+
+ 1. ‹hamming›    – základní operace s řetězci
+ 2. ‹string_sum› – metoda ‹split›, numerické hodnoty znaků
+ 3. ‹powers›     – dvojrozměrný seznam
+
+Elementární příklady:
+
+ 1. ‹atbash›     – jednoduchá substituční šifra
+ 2. ‹palindrome› – řetězce, které se čtou stejně zleva i zprava
+ 3. ‹columns›    – prohození sloupců v tabulce
+
+Přípravy:
+
+ 1. ‹ipv4›       – validace IP adres (protokol IP verze 4)
+ 2. ‹isbn›       – validace ISBN (mezinárodní systém číslování knih)
+ 3. ‹person_id›  – validace rodných čísel
+ 4. ‹vigenere›   – trochu složitější substituční šifra
+ 5. ‹polybius›   – další příklad na šifrování, tentokrát s čísly
+ 6. ‹divisors›   – tabulace počtu společných dělitelů
+
+Rozšířené příklady:
+
+ 1. ‹edges›      – hledání hran v obrázku
+ 2. ‹scytale›    – permutační šifra
+ 3. ‹life› †     – hra života (2D celulární automat)
+ 4. ‹anagram›    – rozhodněte, zda je řetězec permutací jiného
+ 5. ‹filter› †   – čištění obrázku od lokálních artefaktů
+ 6. ‹pattern› †  – hledání vzorku v řetězci

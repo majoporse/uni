@@ -1,0 +1,32 @@
+# Prostředí, soubory
+
+Demonstrační příklady:
+
+1. ‹spellcheck› – jednoduchá kontrola pravopisu
+2. ‹printlist›  – výpis vnořených odrážkových seznamů
+3. ‹printdict›  – výpis vnořených slovníků bez rekurze
+4. ‹wheels› †   – metadata externích knihoven pro jazyk Python
+
+Elementární příklady:
+
+1. ‹names›      – čtení a zápis csv
+2. ‹stock›      – práce s JSON-em
+3. ‹wordfreq›   – frekvence slov v textovém souboru
+
+Přípravy:
+
+1. ‹config›     – formátování strukturovaných dat do souboru
+2. ‹patterns›   – regulární výrazy a práce s textem
+3. ‹split›      – rozdělování textových souborů
+4. ‹parser›     – čtení seznamů ze souboru
+5. ‹zipcat›     – spájení archivů typu ‹zip›
+6. ‹dirtree›    – procházení adresářové struktury
+
+Rozšířené úlohy:
+
+1. ‹weather›    – informace o počasí z dat ve formátu JSON
+2. ‹worktime› † – práce s časem
+3. ‹trailing›   – odstranění přebytečných mezer ze souboru
+4. ‹correct›    – automatická oprava překlepů
+5. ‹language›   – identifikace jazyka
+6. ‹zipsplit›   – rozdělení archivu s limitem na velikost

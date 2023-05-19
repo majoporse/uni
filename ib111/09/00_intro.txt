@@ -1,0 +1,33 @@
+# Rekurze I
+
+Demonstrační příklady:
+
+1. ‹bsearch›  – binární vyhledávání podruhé
+2. ‹tsearch›  – hledání v obyčejných binárních stromech
+3. ‹lookup›   – hledání v binárních «vyhledávacích» stromech
+4. ‹minmax›   – vyhodnocení „min/max“ stromu
+5. ‹cycle›    – použití koncové rekurze
+
+Elementární příklady:
+
+1. ‹count›    – počet uzlů ve stromě
+2. ‹leafsum›  – součet listů n-árního stromu
+3. ‹depth›    – délka nejdelší větve ve stromě
+
+Přípravy:
+
+1. ‹evaluate›  – vyhodnocení aritmetického výrazu zadaného stromem
+2. ‹rpn›       – od stromu k postfixovému zápisu
+3. ‹children›  – úprava atributu v každém uzlu stromu
+4. ‹treezip›   – od dvojice stromů ke stromu dvojic
+5. ‹build› †   – převod závorkovaného řetězce na strom
+6. ‹prune›     – prořezávaní binárních stromů
+
+Rozšířené úlohy:
+
+1. ‹treesum›  – součet všech uzlů ternárního stromu
+2. ‹brackets› – závorkování výrazu zadaného stromem
+3. ‹heap›     – kontrola haldové vlastnosti binárního stromu
+4. ‹avl›      – kontrola tzv. AVL vlastnosti stromu
+5. ‹bdd›      – vyhodnocení binárního rozhodovacího diagramu
+6. ‹average›  – průměrná délka větve stromu

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/pb071_cviko/seminar-08/censor.c
+stdbool.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+readline.h
+/mnt/c/pb071_cviko/seminar-08/readline.h
+
+/mnt/c/pb071_cviko/seminar-08/readline.h
+stdio.h
+-
+

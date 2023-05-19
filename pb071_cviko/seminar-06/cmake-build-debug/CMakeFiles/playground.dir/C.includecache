@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/pb071_cviko/seminar-06/assert.h
+signal.h
+-
+
+/mnt/c/pb071_cviko/seminar-06/dynamic_lib.c
+dynamic_lib.h
+/mnt/c/pb071_cviko/seminar-06/dynamic_lib.h
+signal.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+assert.h
+/mnt/c/pb071_cviko/seminar-06/assert.h
+
+/mnt/c/pb071_cviko/seminar-06/dynamic_lib.h
+stddef.h
+-
+

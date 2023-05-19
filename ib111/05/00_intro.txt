@@ -1,0 +1,95 @@
+# Testování a typy
+
+Tento týden se zaměříme na «korektnost» (správnost) programů –
+zejména nás bude zajímat nástroje, které nám pomohou psát programy
+bez chyb. K dispozici máme dvě základní kategorie takových nástrojů:
+
+ 1. «statické», totiž takové, které analyzují program aniž by jej
+    spouštěli – pracují podobně jako například ‹flake8›, který již
+    znáte,
+ 2. «dynamické», které kontrolují, zda program pracuje správně během
+    samotného provádění programu.
+
+Tyto dva přístupy ke kontrole správnosti programu reprezentují
+určitým způsobem opačné kompromisy. Dynamické nástroje jsou velice
+«přesné» (umožňují kontrolovat prakticky libovolné, i velmi složité,
+vlastnosti), ale nemůžou nám zaručit, že program se bude za všech
+okolností chovat správně. Taková kontrola je často velmi časově
+náročná, protože abychom si ověřili správnost programu, musíme jej
+«testovat»: opakovaně spouštět s různými vstupy.
+
+Statická kontrola je naopak méně přesná (umožňuje nám kontrolovat
+pouze jednoduché vlastnosti programu), ale je rychlá (program není
+potřeba spouštět) a «může» být «bezpečná» (tzn. některé statické
+kontroly můžou zaručit, že určitý typ chyby v programu nikdy
+za běhu nenastane).
+
+V kategorii statických nástrojů jsou pro nás zajímavé zejména
+«typové anotace», které lze kontrolovat programem ‹mypy›. V tomto
+předmětu máme již zkušenost s «dynamickou» typovou kontrolou, kdy
+pokus například o sečtení čísla a řetězce vede na běhovou chybu,
+tzn. program v momentě, kdy se takovou operaci pokusí provést,
+havaruje s výjimkou ‹TypeError›. Typové anotace a statická typová
+kontrola nám umožní většině podobných chyb předejít, aniž bychom
+museli program spustit (natož důkladně testovat).
+
+Z těch dynamických jsou pro nás přístupná zejména dynamická
+«tvrzení», která zapisujeme již známým klíčovým slovem ‹assert›.
+Dynamická tvrzení nám zejména umožňují formalizovat a automaticky,
+při každém volání, kontrolovat vstupní a výstupní podmínky funkcí
+(podprogramů). Můžeme je také použít k zápisu a ověření dalších
+podmínek, o kterých jsme přesvědčeni, že musí v daném místě programu
+za každých okolností platit.
+
+V obou případech (typové anotace a dynamická tvrzení) musíme do
+programu přidat dodatečné informace, které netvoří přímo součást
+výpočetní části programu (tzn. nepopisují samotné kroky výpočtu).
+Mohlo by se na první pohled zdát, že přidávat tyto „přebytečné“
+prvky do programu je práce navíc, která nás bude při programování
+leda zdržovat. Trochu hlubší analýza ale odhalí, že počáteční zápis
+programu tvoří jen zlomek celkového času, který programováním
+strávíme – ladění a údržba typicky zaberou času mnohem víc.
+Investice do anotací se většinou v těchto návazných fázích vývoje
+programu velmi rychle vrátí.
+
+Anotace plní 3 základní funkce:
+
+ 1. nutí nás hlouběji se zamyslet o chování programu – často si
+    uvědomíme chybu už v čase, kdy uvažujeme jaké použít anotace,
+ 2. umožňují použití automatických nástrojů pro kontrolu správnosti,
+    čím detekují chyby, které nám v prvním bodě přeci jen
+    proklouznou,
+ 3. slouží jako dokumentace, jak pro programátory, kteří naše funkce
+    chtějí použít, tak pro pozdější úpravy a opravy v samotném kódu.
+
+Tento týden si práci s anotacemi (zejména těmi typovými) nacvičíme
+na příkladech. Nejprve ale jejich použití demonstrujeme v několika
+ukázkách:
+
+ 1. ‹shapes›      – typové anotace
+ 2. ‹barcode›     – vstupní a výstupní podmínky (1. část)
+ 3. ‹ean›         – vstupní a výstupní podmínky (2. část)
+
+Elementární příklady:
+
+ 1. ‹typefun›     – základní typování funkcí
+ 2. ‹time›        – čtení času
+ 3. ‹fridays›     – typování
+
+Přípravy:
+
+ 1. ‹database›     – typování
+ 2. ‹points›       – typování seznamů
+ 3. ‹course›       – kombinace typování
+ 4. ‹triangle›     – volitelné argumenty
+ 5. ‹doctor›       – zanořené seznamy
+ 6. ‹date› †       – čtení data a času
+
+Rozšířené úlohy:
+
+ 1. ‹squares›      – metoda nejmenších čtverců podruhé
+ 2. ‹life›         – hra života podruhé
+ 3. ‹predicates›   – příklady na pochopení kódu
+ 4. ‹poly› †       – derivace a integrace polynomů
+ 5. ‹gps›          – čtení GPS souřadnic
+ 6. ‹precondition› – určování vstupní podmínky

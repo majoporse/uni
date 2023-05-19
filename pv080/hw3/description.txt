@@ -1,0 +1,9 @@
+1: What is the main problem (or problems) with the DATABASE server that allows authentication as professor Vashek Matyas?
+---------------------------------------------------------------
+The main problem is, that you need to authenticate as the person recieving the points and not the person giving the points.
+Also considering this there is no practical way, that Vasek could assign the points, because he would need to know Ján Jančárs private rsa key to sign the information, which he cannot know in the forst place.
+
+2: How would you fix the problem(s)?
+---------------------------------------------------------------
+Change the rsa sign-ing of the message to the person giving the points and not the person recieving them. 
+This would mean, that the person with the leaked message could not identify as someone else.

@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99 -ggdb3 -Wall -Wextra -pedantic -g  -rdynamic CMakeFiles/playground.dir/playground.c.o CMakeFiles/playground.dir/tree.c.o CMakeFiles/playground.dir/stack.c.o  -o playground 

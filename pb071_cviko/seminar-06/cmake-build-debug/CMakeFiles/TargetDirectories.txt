@@ -1,0 +1,4 @@
+/mnt/c/pb071_cviko/seminar-06/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/pb071_cviko/seminar-06/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/pb071_cviko/seminar-06/cmake-build-debug/CMakeFiles/tests.dir
+/mnt/c/pb071_cviko/seminar-06/cmake-build-debug/CMakeFiles/playground.dir

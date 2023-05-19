@@ -1,0 +1,136 @@
+==1521== Memcheck, a memory error detector.
+==1521== Copyright (C) 2002-2006, and GNU GPL'd, by Julian Seward et al.
+==1521== Using LibVEX rev 1606, a library for dynamic binary translation.
+==1521== Copyright (C) 2004-2006, and GNU GPL'd, by OpenWorks LLP.
+==1521== Using valgrind-3.2.0, a dynamic binary instrumentation framework.
+==1521== Copyright (C) 2000-2006, and GNU GPL'd, by Julian Seward et al.
+==1521== For more details, rerun with: -v
+==1521== 
+==1521== My PID = 1521, parent PID = 1519.  Prog and args are:
+==1521==    ./e3_zeros
+==1521== 
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:7
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+--1521-- DWARF2 CFI reader: unhandled CFI instruction 0:10
+vex amd64->IR: unhandled instruction bytes: 0xF 0x1F 0x44 0x0
+==1521== valgrind: Unrecognised instruction at address 0x4001A53.
+==1521== Your program just tried to execute an instruction that Valgrind
+==1521== did not recognise.  There are two possible reasons for this.
+==1521== 1. Your program has a bug and erroneously jumped to a non-code
+==1521==    location.  If you are running Memcheck and you just saw a
+==1521==    warning about a bad jump, it's probably your program's fault.
+==1521== 2. The instruction is legitimate but Valgrind doesn't handle it,
+==1521==    i.e. it's Valgrind's fault.  If you think this is the case or
+==1521==    you are not sure, please let us know and we'll try to fix it.
+==1521== Either way, Valgrind will now raise a SIGILL signal which will
+==1521== probably kill your program.
+==1521== 
+==1521== Process terminating with default action of signal 4 (SIGILL)
+==1521==  Illegal opcode at address 0x4001A53
+==1521==    at 0x4001A53: _dl_start (in /usr/lib64/ld-2.17.so)
+==1521==    by 0x4001147: (within /usr/lib64/ld-2.17.so)
+==1521==    by 0xDEADBEEFDEADBEEE: ???
+==1521==    by 0xDEADBEEFDEADBE00: ???
+==1521==    by 0xDEADBEEFDEADBEEE: ???
+==1521==    by 0x3801958F: vgPlain_getrlimit (m_libcproc.c:307)
+==1521== 
+==1521== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1521== malloc/free: in use at exit: 0 bytes in 0 blocks.
+==1521== malloc/free: 0 allocs, 0 frees, 0 bytes allocated.
+==1521== For counts of detected errors, rerun with: -v
+==1521== All heap blocks were freed -- no leaks are possible.

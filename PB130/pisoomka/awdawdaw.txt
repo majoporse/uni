@@ -1,0 +1,29 @@
+Begin_ride:
+
+"open app" and "log in" and "browse bikes" (maybe) is 
+	out of scope of this use case
+	
+there is no "begin ride" usecase in your use case diagram
+
+"try to unlock bike" implies it can fail, but diagram doesnt show that
+
+beginning a ride should only start the billed __period__ of the ride
+
+"authorize payment" is out of scope of this usecase, that should happen at the
+	end of the ride
+	
+"Begin ride" is an action in the "Begin ride" activity 
+
+
+Register_new_account:
+	
+"Fill registration form" is not an atomic action. I would suggest a fork with
+	different form fields (such as: Name, Surname, Email ...)
+
+something like "validate registration form" should be preceding "is form valid"
+
+there should be a merge node between "Open registration form" 
+	and "Fill registration form" to which an arrow from decision node 
+	should point to
+
+interaction with the database should be modeled (maybe 🤷)
