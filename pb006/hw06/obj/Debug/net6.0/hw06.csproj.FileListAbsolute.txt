@@ -1,0 +1,15 @@
+C:\pb006\hw06\obj\Debug\net6.0\hw06.csproj.AssemblyReference.cache
+C:\pb006\hw06\obj\Debug\net6.0\hw06.GeneratedMSBuildEditorConfig.editorconfig
+C:\pb006\hw06\obj\Debug\net6.0\hw06.AssemblyInfoInputs.cache
+C:\pb006\hw06\obj\Debug\net6.0\hw06.AssemblyInfo.cs
+C:\pb006\hw06\obj\Debug\net6.0\hw06.csproj.CoreCompileInputs.cache
+C:\pb006\hw06\bin\Debug\net6.0\hw06.exe
+C:\pb006\hw06\bin\Debug\net6.0\hw06.deps.json
+C:\pb006\hw06\bin\Debug\net6.0\hw06.runtimeconfig.json
+C:\pb006\hw06\bin\Debug\net6.0\hw06.dll
+C:\pb006\hw06\bin\Debug\net6.0\hw06.pdb
+C:\pb006\hw06\obj\Debug\net6.0\hw06.dll
+C:\pb006\hw06\obj\Debug\net6.0\refint\hw06.dll
+C:\pb006\hw06\obj\Debug\net6.0\hw06.pdb
+C:\pb006\hw06\obj\Debug\net6.0\hw06.genruntimeconfig.cache
+C:\pb006\hw06\obj\Debug\net6.0\ref\hw06.dll
