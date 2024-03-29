@@ -1,0 +1,19 @@
+jobs: jobs [-lnprs] [úloha…] nebo jobs -x příkaz [argumenty]
+    Zobrazí stav úloh.
+    
+    Vypíše aktivní úlohy. ÚLOHA omezuje výstup na danou úlohu. Bez uvedení
+    přepínačů bude vypsán stav všech aktivních úloh.
+    
+    Přepínače:
+      -l	vypíše navíc ID procesů
+      -n	vypíše pouze procesy, které od minulého oznámení změnily stav
+      -p	vypíše pouze ID procesů
+      -r	zúží výstup jen na běžící úlohy
+      -s	zúží výstup jen na pozastavené úlohy
+    
+    Je-li použito -x, bude spuštěn příkaz, jakmile všechny úlohy uvedené mezi
+    ARGUMENTY budou nahrazeny ID procesu, který je vedoucím skupiny dané úlohy.
+    
+    Návratový kód:
+    Vrátí úspěch, pokud nebyl zadán neplatný přepínač a nevyskytla se chyba.
+    Byl-ly použit přepínač -x, vrátí návratový kód PŘÍKAZU.

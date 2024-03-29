@@ -1,0 +1,437 @@
+#!/bin/bash
+ABC="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+REGE="^[$ABC][${ABC}0-9_]*$"
+FILE=DATADIR
+FORCE=NO
+if test $# -lt 1;then echo "where arguments" >&2; exit 1;fi
+
+if test -z $LOGNAME;
+	then CUR_USER=x
+	else CUR_USER=$LOGNAME
+fi
+
+LOG_LINE="`date +'%Y-%m-%d %H:%M.%S'` $$ $CUR_USER $0 $@"
+echo $LOG_LINE >> $FILE/KOKOT
+
+
+while getopts ':d:f' NAME; do
+	case "$NAME" in
+		"d")
+		FILE=$OPTARG
+		;;
+		"f")
+		FORCE=YES
+		;;
+		":")
+		echo "wrong arguments" >&2;exit 1
+		;;
+	esac
+done
+shift $(($OPTIND-1))
+
+if test $# -lt 1;then echo wrong args >&2 ;exit 1;fi
+
+mkdir -p $FILE
+if ! touch $FILE/logs 2>/dev/null;then echo "cant touch" >&2;exit 1;fi
+echo $LOG_LINE >> $FILE/logs
+touch $FILE/semesters $FILE/fakulty $FILE/courses $FILE/students $FILE/zapis $FILE/znamky 
+
+while test $# -gt 0;
+do
+	case $1 in
+
+		"cesta-adresar"|"cesta-adresář")
+		if test $# -gt 1;then echo "wrong arguments" >&2;exit 1;fi
+		echo $FILE
+		shift
+		;;
+
+		"smaž-adresář"|"smaz-adresar")
+		if test $FORCE = NO;
+				then echo "zla volba" >&2;exit 1;
+				else rm -r -f $FILE;
+		fi
+		shift
+		;;
+
+		"dej-log")
+		if test $# -eq 1;
+			then if test $(cat $FILE/logs | wc -l) -lt 1;
+				then exit 1;
+				else cat $FILE/logs
+				shift
+				fi
+			else
+				if ! test $# -eq 2;then echo "wrong ammount of args" >&2;exit 1;fi
+				if  test $(cat $FILE/logs | egrep $2 | wc -l) -lt 1;
+					then exit 1
+					else cat $FILE/logs | egrep $2
+					shift 2
+				fi
+		fi
+		;;
+
+		"fakulta-nová"|"fakulta-nova") # id název
+		touch $FILE/fakulty
+		if test $(echo $2 | wc -m) -gt 9; then echo "napicu id" >&2;exit 1;fi
+		if ! test $# -eq 3; then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if grep -q "^$2" $FILE/fakulty; then echo "faculty already logged" >&2;exit 1;fi
+		echo "${2}|${3}" >> $FILE/fakulty
+		shift 3
+		;;
+
+		"fakulta-výpis"|"fakulta-vypis") #[id]
+		if test $# -gt 2;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if test $# -eq 2;
+			then TMP=$(cat $FILE/fakulty | grep "^$2")
+				shift 2
+			else 
+				TMP=$(cat $FILE/fakulty)
+				shift
+		fi
+	
+
+		echo "Fakulta  | Název"
+		echo "--------------------------"
+		while read -r LINE;
+			do
+			A=$(echo "$LINE" | cut -f1 -d'|')
+			B=$(echo "$LINE" | cut -f2 -d'|')
+			printf "%-8s | %s\n" "$A" "$B"
+		done <<< "$TMP" | sort
+		;;
+
+		"fakulta-název"|"fakulta-nazev") # id název
+		if test $# -ne 3;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if ! grep -q "^$2" $FILE/fakulty; then echo "faculty non-existent" >&2;exit 1;fi
+		sed "s/${2}|.*/${2}|${3}/" $FILE/fakulty > $FILE/lol
+		mv -f $FILE/lol $FILE/fakulty
+		shift 3
+		;;
+
+		"fakulta-smaž"|"fakulta-smaz") # id
+		if grep -q $2 $FILE/semesters;then echo "cannot remove" >&2;exit 1;fi
+		if test $# -ne 2 || ! grep -q "^$2" $FILE/fakulty ;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		sed -i "/^${2}/d" $FILE/fakulty
+		shift 2
+		;;
+		
+		"pomoc")
+		echo $LOG_LINE >> $FILE/logs
+		echo pomocpomocpomocpomocpomocpomocpomocpomoc && exit 0
+		;;
+
+		#Předejte na standardní výstup celkový počet řádků všech souborů,
+		#které v prvním sloupci obsahují liché desítkové celé číslo. 
+		"domácí-úkol")
+		shift
+		COUNT=0
+		for NAME in $@;
+		do
+		COUNT=$[$COUNT + $(cut -f1 -d';' $NAME | grep "^[0-9]*[13579]$" |wc -l)]
+		done
+		echo $COUNT
+		exit 0
+		;;
+
+		"semestr-nový"|"semestr-novy") # |fakulta id| začátek název
+		if test $# -ne 5;then echo "worng ammount of arguments" >&2;exit 1;fi
+		
+		if ! grep -q $2 $FILE/fakulty; then echo "non-existent faculty" >&2;exit 1;fi
+		if grep -q "^$2|$3" $FILE/semesters;then echo "semester already added" >&2;exit 1;fi		
+		if test $(echo $3 | wc -m) -gt 9; then echo "napicu id semestru " >&2;exit 1;fi
+
+		if ! echo $4 | grep -q '^.*-.*-.*$';then echo "invalid date format" >&2;exit 1;fi
+		if ! date -d $4 +'%Y-%m-%d' >/dev/null 2>/dev/null; then echo "wong date" >&2;exit 1;fi
+		if [[ $(echo $4 | cut -f1 -d'-') < 2000 ]] || [[  $4 > $(date -d "+2 years" +"%Y-%m-%d") ]]
+			then echo "invalid date" >&2;exit 1
+		fi
+		echo "$2|$3|$4|$5" >> $FILE/semesters
+		shift 5
+		;;
+
+		"semestr-smaž"|"semestr-smaz") #fakulta id
+		if test $# -ne 3; then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if grep -q "^${2}|${3}" $FILE/courses; then echo "cannot remove semester" >&2;exit 1;fi
+		if ! grep -q "^${2}|${3}" $FILE/semesters ;then echo "semester non-existent" >&2;exit 1;fi 
+		sed -i "/^${2}|${3}/d" $FILE/semesters
+		shift 3
+		;;
+
+		"semestr-výpis"|"semestr-vypis") #[fakulta [id]]
+		if test $# -gt 3;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if test $# -eq 3;
+			then
+				TMP=$(cat $FILE/semesters | grep "^${2}|${3}")
+				shift 3
+		elif test $# -eq 2;
+			then
+				TMP=$(cat $FILE/semesters | grep "^$2")
+				shift 2
+		else
+				TMP=$(cat $FILE/semesters)
+				shift
+		fi
+
+		if test $(echo $TMP | wc -m) -lt 2;then echo "semester not registered" >&2;exit 1;fi
+		
+		echo "Fakulta  | Semestr  | Od         | Název"
+		echo "-----------------------------------------"
+		while read -r LINE;
+			do
+			A=$(echo "$LINE" | cut -f1 -d'|')
+			B=$(echo "$LINE" | cut -f2 -d'|')
+			C=$(echo "$LINE" | cut -f3 -d'|')
+			D=$(echo "$LINE" | cut -f4 -d'|')
+			printf "%-8s | %-8s | %-8s | %s\n" "$A" "$B" "$C" "$D"
+		done <<< "$TMP" | sort -k 3
+		;;
+
+		"semestr-datum") #fakulta id začátek
+		if ! date -d $4 +'%Y-%m-%d' >/dev/null 2>/dev/null; then echo "wong date" >&2;exit 1;fi
+		if [[ $(echo $4 | cut -f1 -d'-') < 2000 ]] || [[  $4 > $(date -d "+2 years" +"%Y-%m-%d") ]]
+			then echo "invalid date" >&2;exit 1
+		fi
+		if test $# -ne 4;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if ! grep -q "^${2}|${3}" $FILE/semesters; then echo "semester non-existent" >&2;exit 1;fi
+		sed "s/${2}|${3}|.*|/${2}|${3}|${4}|/" $FILE/semesters > $FILE/lol
+		mv -f $FILE/lol $FILE/semesters
+		shift 4
+		;;
+
+		"semestr-název"|"semestr-nazev") #fakulta id název
+		if test $# -ne 4;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if ! grep -q "^${2}|${3}" $FILE/semesters; then echo "semester non-existent" >&2;exit 1;fi
+		sed "s/${2}|${3}|\([^|]*\)|.*/${2}|${3}|\1|${4}|/" $FILE/semesters > $FILE/lol
+		mv -f $FILE/lol $FILE/semesters
+		shift 4
+		;;
+
+		"předmět-výpis"|"predmet-vypis") #[fakulta [semestr [kód_předmětu]]]
+		if test $# -gt 4;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if test $# -eq 4;
+			then
+				TMP=$(cat $FILE/courses | grep -i "^${2}|${3}|${4}")
+				shift 4
+		elif test $# -eq 3;
+			then
+				TMP=$(cat $FILE/courses | grep "^${2}|${3}")
+				shift 3
+		elif test $# -eq 2;
+			then
+				TMP=$(cat $FILE/courses | grep "^$2")
+				shift 2
+		else
+				TMP=$(cat $FILE/courses)
+				shift
+		fi
+
+		if test $(echo $TMP | wc -m) -lt 2;then echo "course not registered" >&2;exit 1;fi
+		
+		echo "Fakulta  | Semestr  | Kurz     | Uk | Kr | Název"
+		echo "----------------------------------------------------"
+		while read -r LINE;
+			do
+			A=$(echo "$LINE" | cut -f1 -d'|')
+			B=$(echo "$LINE" | cut -f2 -d'|')
+			C=$(echo "$LINE" | cut -f3 -d'|')
+			D=$(echo "$LINE" | cut -f4 -d'|')
+			E=$(echo "$LINE" | cut -f5 -d'|')
+			F=$(echo "$LINE" | cut -f6 -d'|')
+
+			printf "%-8s | %-8s | %-8s | %-2s | %+2s | %s\n" "$A" "$B" "$C" "$D" "$E" "$F"
+		done <<< "$TMP" | sort
+		;;
+
+		"předmět-kredity"|"predmet-kredity") #fakulta semestr kód_předmětu kreditů
+		shift
+		if ! test $4 -eq $4 2>/dev/null || test $4 -lt 0 || test $4 -gt 20 ;then echo "credits not correct" >&2;exit 1;fi
+		if test $# -ne 4;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		LINE=$(grep -i "^${1}|${2}|${3}" $FILE/courses)
+		if test $(echo $LINE | wc -m) -lt 2 ; then echo "course non-existent" >&2;exit 1;fi
+		sed -i "s/^${1}|${2}|${3}|\([^|]*\)|[^|]*/${1}|${2}|$(echo $LINE | cut -f3 -d'|')|\1|${4}/I" $FILE/courses 
+		shift 4
+		;;
+
+		"předmět-smaž"|"predmet-smaz") #fakulta semestr kód_předmětu
+		shift
+		if test $# -ne 3; then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if grep -qi "^.*|.*|$3" $FILE/zapis; then echo "course registered by students" >&2;exit 1;fi
+		if ! grep -qi "^${1}|${2}|${3}|" $FILE/courses ;then echo "course non-existent" >&2;exit 1;fi 
+		sed -i "/^${1}|${2}|${3}/Id" $FILE/courses
+		shift 3
+		;;
+
+		"předmět-název"|"predmet-nazev") #fakulta semestr kód_předmětu (název předmětu)
+		shift
+		if test $# -ne 4;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		LINE=$(grep -i "^${1}|${2}|${3}" $FILE/courses)
+		if test $(echo $LINE | wc -m) -lt 2 ; then echo "course non-existent" >&2;exit 1;fi
+		sed -i "s/${1}|${2}|${3}|\([^|]*\)|\([^|]*\)|.*/${1}|${2}|$(echo $LINE | cut -f3 -d'|')|\1|\2|${4}/I" $FILE/courses 
+		shift 4
+		;;
+		
+		"předmět-nový"|"predmet-novy") #fakulta semestr kód_předmětu (název předmětu) ukončení kreditů
+		shift
+		if test $# -ne 6;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if ! grep -q $1 $FILE/fakulty;then echo "non-existent faculty" >&2;exit 1;fi 
+		if ! grep -q "${1}|${2}" $FILE/semesters;then echo "semester does not exist" >&2;exit 1;fi
+		if test $(echo $3 | wc -m) -gt 9; then echo "course name too long" >&2;exit 1;fi
+		if echo $3 | grep -q -v "$REGE";then echo "code not correct" >&2;exit 1;fi
+		if grep -qi "^$1|$2|$3" $FILE/courses;then echo "code already logged" >&2;exit 1;fi
+		if echo $5 | grep -qv '^z' && echo $5 | grep -qv '^zk$' && echo $5 | grep -qv '^k$';
+			then echo "not correct ending" >&2;exit 1
+		fi
+		if ! test $6 -eq $6 2>/dev/null || test $6 -lt 0 || test $6 -gt 20 ;then echo "credits not correct" >&2;exit 1;fi
+		echo "$1|$2|$3|$5|$6|$4" >> $FILE/courses
+		shift 6
+		;;
+
+		"předmět-ukončení"|"predmet-ukonceni") #fakulta semestr kód_předmětu ukončení
+		shift
+		if echo $4 | grep -qv '^z' && echo $4 | grep -qv '^zk$' && echo $4 | grep -qv '^k$';
+			then echo "not correct ending" >&2;exit 1
+		fi
+		if test $# -ne 4;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		LINE=$(grep -i "^${1}|${2}|${3}" $FILE/courses)
+		if test $(echo $LINE | wc -m) -lt 2 ; then echo "course non-existent" >&2;exit 1;fi
+		sed -i "s/^${1}|${2}|${3}|[^|]*|/${1}|${2}|$(echo $LINE | cut -f3 -d'|')|${4}|/I" $FILE/courses 
+		shift 4
+		;;
+
+		"student-nový"|"student-novy") #učo jméno příjmení datum_narození email
+		shift
+		if test $# -ne 5;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if test -z $1 || echo $1 | grep -q '^0' || ! test $1 -eq $1 >/dev/null || grep -q "^$1" $FILE/students || test $1 -lt 0 ;then echo "wrong uco" >&2;exit 1;fi
+		if test -z $2 || test -z $3;then echo "wong name" >&2;exit 1;fi
+		if echo $4 | grep -qv '....-..-..' || ! date -d $4 >/dev/null 2>/dev/null || [[ $4  < "1900-01-01" ]] || [[ $4 > $(date +"%Y-%m-%d") ]]
+			then echo "invalid time" >&2;exit 1;
+		fi
+		if echo $5 | grep -q "[^@${ABC}1-9.-_]" || echo $5 | grep -qv '^[^@][^@]*@[^.@][^.@]*\.[^@]*[^.]$' || echo $5 | cut -f2 -d'@' | fgrep -q '..' ;
+			then echo "wrong email" >&2;exit 1
+		fi
+		echo "$1|$2|$3|$4|$5" >> $FILE/students
+		shift 5
+		;;
+		
+		"student-export")
+		if test $# -gt 1;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		TMP=$(cat $FILE/students)
+		shift
+
+		if test $(echo $TMP | wc -m) -lt 2;then echo "0 students" >&2;exit 1;fi
+		
+		while read -r LINE;
+			do
+			A=$(echo "$LINE" | cut -f1 -d'|')
+			B=$(echo "$LINE" | cut -f5 -d'|')
+
+			printf "%s;%s\n" "$A" "$B" 
+		done < "$FILE/students" | sort -n
+		;;
+
+		"student-smaž"|"student-smaz")
+		shift
+		if test $# -ne 1;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		if grep -qi "${1}$" $FILE/zapis; then echo "course registered by student" >&2;exit 1;fi
+		if ! grep -q $1 $FILE/students; then echo "UCO non-existent" >&2;exit 1;fi
+		sed -i "/^${1}/d" $FILE/students
+		shift
+		;;
+
+		"zápis"|"zapis") #fakulta semestr kód učo
+		shift
+		if test $# -ne 4;then echo "wrong ammount of arguments" >&2;exit 1;fi
+
+		if ! grep -q "^$1" $FILE/fakulty; then echo "non-existent faculty" >&2; exit 1;fi
+		if ! grep -q "^$1|$2" $FILE/semesters; then echo "wrong semester" >&2; exit 1;fi
+		if ! grep -qi "^.*|.*|$3" $FILE/courses; then echo "non-existent course" >&2; exit 1;fi
+		if ! grep -q "^$4" $FILE/students; then echo "non-existent student" >&2; exit 1;fi
+
+		if grep -q "^${1}|${2}|${3}|${4}$" $FILE/zapis; then echo "already registered" >&2;exit 1;fi
+		echo "$1|$2|$3|$4" >> $FILE/zapis
+		shift 4
+		;;
+
+		"zápis-předmět"|"zapis-predmet") #fakulta semestr kód
+		shift
+		if test $# -ne 3;then echo "wrong ammount of arguments" >&2;exit 1;fi
+		TMP=$(cat $FILE/zapis | grep -i "^$1|$2|$3" | cut -f4 -d'|')
+
+		
+		if test $(echo $TMP | wc -m) -lt 2;then echo "0 students" >&2;exit 1;fi
+		
+		for UCO in $TMP;
+			do
+			LINE=$(cat $FILE/students | grep "^$UCO" )
+			A=$(echo "$LINE" | cut -f3 -d'|')
+			B=$(echo "$LINE" | cut -f2 -d'|')
+
+			printf "%s, %s; učo %d\n" "$A" "$B" "$UCO"
+		done | sort -k1,1 -k2,2 -k4,4n
+		shift 3
+		;;
+
+		"známka"|"znamka") #fakulta semestr kód učo známka
+		shift
+		if test $# -ne 5;then echo "wrong ammount of arguments" >&2; exit 1;fi
+		if test "$(grep "^$1|$2|$3|$4" $FILE/znamky | wc -l)" -gt 2;then echo "maximum reached" >&2; exit 1;fi
+		if ! grep -q "$1|$2|$3|$4" $FILE/zapis; then echo "invalid zapis" >&2; exit 1;fi
+		if grep "^$1|$2|$3|$4" $FILE/znamky | grep -q '^.*|.*|.*|.*|[A-EZ]|.*$'; then echo "student already passed the course" >&2; exit 1;fi
+		if ! echo $5 | grep -q '[A-FNZ]'; then echo "wong grade" >&2;exit 1;fi
+
+		MARK=$(grep -i "$1|$2|$3"  $FILE/courses | cut -f4 -d'|' )
+		if test "$MARK" = zk && ! echo $5 | grep -q '[A-F]' ||  test "$MARK" = z && ! echo $5 | grep -q '[NZ]';
+			then echo "worng grade" >&2;exit 1
+		fi
+		PRED=$(grep -i "^[^|]*|[^|]*|$3|" $FILE/courses | cut -f3 -d'|' )
+		echo "$1|$2|$PRED|$4|$5|$(date +'%Y-%m-%d %H:%M.%S')" >> $FILE/znamky
+		shift 5
+		;;
+
+		"zápis-smaž"|"zapis-smaz") #fakulta semestr kód učo
+		shift
+		if test $# -ne 4; then echo "wrong ammount of arguments" >&2;exit 1;fi
+		#if ! grep -qi "^${1}|${2}|${3}|" $FILE/courses ;then echo "course non-existent" >&2;exit 1;fi 
+		sed -i "/^${1}|${2}|${3}|$4/Id" $FILE/zapis
+		sed -i "/^${1}|${2}|${3}|$4/Id" $FILE/znamky
+		shift 4
+		;;
+
+		"známka-výpis"|"znamka-vypis") #buď vybíráte jeden předmět: fakulta semestr kód, nebo zadáváte jen učo studenta
+		shift
+		if test $# -eq 3;
+			then
+				TMP=$(grep -i "^$1|$2|$3|" $FILE/znamky )
+				IFS='|'
+				while read FAK SEM PRED UCO ZNAM CAS;
+				do
+					MENO=$(grep "^$UCO" $FILE/students | cut -f3 -d'|')
+					PRIEZVISKO=$(grep "^$UCO" $FILE/students | cut -f2 -d'|')
+					printf "%s, %s; učo %s: %s %s\n" "$MENO" "$PRIEZVISKO" "$UCO" "$ZNAM" "$CAS"
+				done <<< "$TMP" | sort -k1,1 -k2,2 -k6,6 -k7,7
+				shift 3
+		elif test $# -eq 1
+			then
+				TMP=$(grep "^[^|]*|[^|]*|[^|]*|$1" $FILE/znamky | sort -t'|' -k3,3 -k6,6 )
+				IFS='|'
+				while read FAK SEM KOD UCO ZNAMKA CAS;
+				do
+				PRED=$(grep "^$FAK|$SEM|$KOD" $FILE/courses | cut -f6 -d'|')
+				printf "%s %s: %s %s\n" "$KOD" "$PRED" "$ZNAMKA" "$CAS"
+				done <<< "$TMP"
+				shift
+		else 
+			echo "wrong ammount of arguments" >&2; exit 1;
+		fi
+
+		#if test $(echo $TMP | wc -m) -lt 2;then echo "0 students" >&2;exit 1;fi
+
+		;;
+
+		*)
+		echo "wrong argument $1" >&2; exit 1
+	esac
+done
+
+

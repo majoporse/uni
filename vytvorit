@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo $0
+JMENO=$(basename $0)
+echo $JMENO
+
+if echo $JMENO | grep smazat >/dev/null;then echo "Skript f1a0c bude mazat.";fi
+
+if echo $JMENO | grep vytvorit >/dev/null; then echo "Skript f1a0c bude vytvářet.";fi
